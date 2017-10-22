@@ -19,11 +19,17 @@
     group: root
     mode: 0644
   with_items:
-    - 10-syslog.conf
-    - 11-nginx.conf
-    - 12-apache.conf
-    - 14-solr.conf
     - 15-drupal.conf
+    - ingres-nginx-access.conf
+    - ingres-syslog.conf
+
+    # not needed
+    #- 12-apache.conf
+    #- 11-nginx.conf
+    #- 10-syslog.conf
+    # not work
+    #- 14-solr.conf
+    #- ingres-apache.conf
   notify: restart logstash
 
 - name: Create Logstash configuration file for local syslog.
